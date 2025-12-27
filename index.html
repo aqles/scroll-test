@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScrollFlow.js - Modern Scroll Interactions</title>
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/scrollflow.css">
+</head>
+<body>
+
+    <!-- ScrollFlow Auto Init -->
+    <script src="src/scrollflow.js" data-auto-init></script>
+
+    <header class="glass">
+        <div class="logo">ScrollFlow<span style="color:white">.js</span></div>
+        <nav>
+            <a href="#features">Features</a>
+            <a href="#how-it-works">Docs</a>
+            <a href="#download" class="btn btn-primary" style="margin-left: 2rem; padding: 0.5rem 1.5rem;">Download</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div class="hero-bg" data-sf-parallax="0.3" style="background-image: url('assets/hero-bg.png'); background-size: cover; background-position: center;"></div>
+        <!-- Animated Blobs (Pure CSS) -->
+        <div class="hero-blob blob-1"></div>
+        <div class="hero-blob blob-2"></div>
+
+        <div class="hero-content" style="z-index: 1;">
+            <h1 data-sf-reveal="fade-up">Scroll.<br>Animate.<br>Flow.</h1>
+            <p data-sf-reveal="fade-up" data-sf-delay="200">
+                A lightweight, zero-dependency JavaScript library <br>
+                for next-level scroll interactions.
+            </p>
+            <div data-sf-reveal="fade-up" data-sf-delay="400">
+                <a href="#features" class="btn btn-primary" style="margin-right: 1rem;">Get Started</a>
+                <a href="https://github.com/aqles/scroll-test" target="_blank" class="btn glass">View on GitHub</a>
+            </div>
+        </div>
+    </div>
+
+    <section id="features">
+        <h2 class="section-title" data-sf-reveal="fade-up">Why ScrollFlow?</h2>
+        <div class="grid">
+            <div class="card glass" data-sf-reveal="fade-up" data-sf-delay="100">
+                <h3>⚡ Zero Dependencies</h3>
+                <p>Written in pure ES6 JavaScript. No jQuery, no bloat. Just 2KB gzipped.</p>
+            </div>
+            <div class="card glass" data-sf-reveal="fade-up" data-sf-delay="200">
+                <h3>🎨 Reveal Animations</h3>
+                <p>Fade up, slide in, zoom in. Trigger animations easily when elements enter the viewport.</p>
+            </div>
+            <div class="card glass" data-sf-reveal="fade-up" data-sf-delay="300">
+                <h3>🌌 Parallax Engine</h3>
+                <p>Smooth parallax effects for backgrounds and elements with a simple data attribute.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" style="background: rgba(255,255,255,0.02);">
+        <h2 class="section-title" data-sf-reveal="fade-up">How It Works</h2>
+        
+        <div style="max-width: 800px; margin: 0 auto;">
+            <p data-sf-reveal="fade-in" style="font-size: 1.1rem; margin-bottom: 2rem;">
+                Just include the script and use data attributes. No complex configuration required.
+            </p>
+
+            <h3 data-sf-reveal="slide-left">1. Installation</h3>
+            <pre data-sf-reveal="zoom-in">
+&lt;link rel="stylesheet" href="css/scrollflow.css"&gt;
+&lt;script src="src/scrollflow.js"&gt;&lt;/script&gt;</pre>
+
+            <br><br>
+
+            <h3 data-sf-reveal="slide-left">2. Reveal Animations</h3>
+            <pre data-sf-reveal="zoom-in" data-sf-delay="100">
+&lt;div data-sf-reveal="fade-up"&gt;
+    I will fade up when visible!
+&lt;/div&gt;</pre>
+
+            <br><br>
+
+            <h3 data-sf-reveal="slide-left">3. Parallax Effect</h3>
+            <pre data-sf-reveal="zoom-in" data-sf-delay="200">
+&lt;div data-sf-parallax="0.5"&gt;
+    I move specifically slower than scroll!
+&lt;/div&gt;</pre>
+        </div>
+    </section>
+
+    <section id="download" style="text-align: center; padding: 8rem 2rem;">
+        <h2 data-sf-reveal="zoom-in" style="font-size: 3rem; margin-bottom: 2rem;">Ready to Flow?</h2>
+        <a href="#" class="btn btn-primary" style="padding: 1.2rem 3rem; font-size: 1.2rem;" data-sf-reveal="fade-up">Download Library</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 ScrollFlow.js. Open Source MIT License.</p>
+    </footer>
+
+    <script>
+        // Optional: Manual Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+/* ScrollFlow Base Styles */
+
+:root {
+    --sf-anim-duration: 0.8s;
+    --sf-anim-ease: cubic-bezier(0.25, 1, 0.5, 1);
+    --sf-progress-color: #3b82f6;
+    --sf-progress-height: 4px;
+}
+
+/* Progress Bar */
+.sf-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--sf-progress-height);
+    background: transparent;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.sf-progress-indicator {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #ec4899);
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+/* Reveal Animations Base */
+[data-sf-reveal] {
+    opacity: 0;
+    transition: opacity var(--sf-anim-duration) var(--sf-anim-ease),
+                transform var(--sf-anim-duration) var(--sf-anim-ease);
+    will-change: opacity, transform;
+}
+
+/* Visible State */
+[data-sf-reveal].sf-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Animation Types */
+[data-sf-reveal="fade-up"] {
+    transform: translateY(30px);
+}
+
+[data-sf-reveal="fade-in"] {
+    /* No transform, just opacity */
+}
+
+[data-sf-reveal="zoom-in"] {
+    transform: scale(0.95);
+}
+
+[data-sf-reveal="slide-left"] {
+    transform: translateX(-30px);
+}
+
+[data-sf-reveal="slide-right"] {
+    transform: translateX(30px);
+}
+
+/* Staggered Delays */
+[data-sf-delay="100"] { transition-delay: 0.1s; }
+[data-sf-delay="200"] { transition-delay: 0.2s; }
+[data-sf-delay="300"] { transition-delay: 0.3s; }
+[data-sf-delay="400"] { transition-delay: 0.4s; }
+[data-sf-delay="500"] { transition-delay: 0.5s; }
