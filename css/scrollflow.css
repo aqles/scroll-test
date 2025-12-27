@@ -45,7 +45,9 @@
     transform: translateY(30px);
 }
 
-
+[data-sf-reveal="fade-in"] {
+    transform: none;
+}
 
 [data-sf-reveal="zoom-in"] {
     transform: scale(0.95);
